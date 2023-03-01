@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* font-family: "Poppins", sans-serif;
+font-family: "Raleway", sans-serif;
+font-family: "Roboto Mono", monospace;
+font-family: "Work Sans", sans-serif; */
+
+:root {
+  --color-primary: white;
+  --color-secondary: rgb(26, 26, 26);
+  --color-heading: rgb(0, 130, 130);
+  --color-heading-secondary: purple;
+  --transiton-hover-duration: all 0.5s;
+  --box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.422);
+}
+
+html body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  background-color: rgb(0, 102, 255);
+  color: white;
+  font-size: 26px;
+}
+
+body h1 {
+  font-weight: 500;
+  font-size: 40px;
+}
+
+html body h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+html .weather-icon {
+  font-size: 5rem !important;
+}
+.display-weather::after {
+  content: "o";
+  font-size: 1rem;
+  position: absolute;
+  /* margin-top: -10rem; */
+}
+
+html .display-weather {
+  font-weight: 600;
+  font-size: 4rem !important;
+  /* position: relative; */
+}
+
+html .feels-like {
+  font-weight: 500;
+  margin-top: -2rem;
+  color: #86ffff !important;
+}
+
+.feels-like::after {
+  content: "o";
+  font-size: 0.5rem;
+  position: absolute;
+}
+
+.fa-cloud {
+  color: rgb(187, 187, 187);
+}
+
+.fa-sun {
+  color: rgb(255, 251, 0);
+}
+
+.fa-rain {
+  color: #86ffff;
+}
