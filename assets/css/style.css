@@ -13,106 +13,185 @@ font-family: "Work Sans", sans-serif; */
   --box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.422);
 }
 
-html body {
+body {
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   background-color: rgb(0, 102, 255);
   color: white;
-  font-size: 26px;
 }
 
-body h1 {
-  font-weight: 500;
-  font-size: 40px;
+/* Navbar */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  font-size: 2rem;
+}
+nav .default-text {
+  font-size: 3rem;
+  all: unset;
+  text-align: center;
+  /* border-bottom: 1px solid rgb(130, 130, 130); */
 }
 
-html body h2 {
-  font-family: "Poppins", sans-serif;
-  font-size: 40px;
-  font-weight: 500;
+nav input:focus-visible {
+  outline: none;
 }
 
-html .weather-icon {
-  font-size: 5rem !important;
+@media (min-width: 1600px) {
+  .default-text {
+    font-size: 4rem !important;
+  }
 }
-.display-weather::after {
+
+/* Weather Display Container */
+.weather-icon-container {
+  max-width: 40%;
+}
+
+.weather-icon {
+  max-width: 80%;
+}
+
+.weather-icon-hidden {
+  display: none;
+}
+
+.weather-details {
+  display: flex;
+  justify-content: center;
+}
+
+.temperature-container {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.temperature-container .main-temp {
+  margin-top: 0rem;
+  font-size: 5rem;
+}
+
+.main-temp::after {
+  position: absolute;
   content: "o";
   font-size: 1rem;
-  position: absolute;
-  /* margin-top: -10rem; */
+  margin-top: 1rem;
 }
 
-html .display-weather {
-  font-weight: 600;
-  font-size: 4rem !important;
-  /* position: relative; */
-}
-
-html .feels-like {
-  font-weight: 500;
-  margin-top: -2rem;
-  color: #86ffff !important;
+.temperature-container .feels-like {
+  margin-top: -5rem;
+  font-size: 1.5rem;
 }
 
 .feels-like::after {
-  content: "o";
-  font-size: 0.5rem;
   position: absolute;
+  content: "o";
+  font-size: 0.7rem;
 }
 
-.fa-cloud {
-  color: rgb(187, 187, 187);
-}
-
-.fa-sun {
-  color: rgb(255, 251, 0);
-}
-
-.fa-rain {
-  color: #86ffff;
-}
-
-.fa-cloud-sun {
-  background-color: #f3ec78;
-  background-image: linear-gradient(350deg, #ffffff, #ffa837);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-
-.fa-spin {
-  animation-name: fa-spin-animation;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-}
-
-@keyframes fa-spin-animation {
-  0% {
-    color: aqua !important;
+@media (min-width: 640px) {
+  .main-temp {
+    font-size: 5rem !important;
   }
-  25% {
-    color: green !important;
+
+  .feels-like {
+    /* margin-top: -12rem !important; */
+    font-size: 2.4rem !important;
   }
-  50% {
-    color: blueviolet !important;
-  }
-  75% {
-    color: yellow !important;
-  }
-  100% {
-    color: rgb(0, 102, 255) !important;
+
+  .weather-icon-container {
+    max-width: 30% !important;
   }
 }
 
-.location-input-area {
-  margin-top: 50vh;
+@media (min-width: 1024px) {
+  .main-temp {
+    font-size: 10rem !important;
+  }
+  .main-temp::after {
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
+
+  .feels-like {
+    margin-top: -12rem !important;
+    font-size: 2rem !important;
+  }
+  .feels-like::after {
+    font-size: 1rem;
+    margin-top: 0.2rem;
+  }
+
+  .weather-icon-container {
+    max-width: 30% !important;
+  }
+}
+@media (min-width: 1500px) {
+  .main-temp {
+    font-size: 12rem !important;
+  }
+
+  .main-temp::after {
+    font-size: 3rem;
+    margin-top: 3rem;
+  }
+  .feels-like {
+    margin-top: -15rem !important;
+    font-size: 4rem !important;
+  }
+
+  .weather-icon-container {
+    max-width: 28% !important;
+  }
+}
+@media (min-width: 1920px) {
+  .main-temp {
+    font-size: 15rem !important;
+  }
+
+  .main-temp::after {
+    font-size: 3.2rem;
+    margin-top: 3rem;
+  }
+  .feels-like {
+    margin-top: -18rem !important;
+    font-size: 4.3rem !important;
+  }
+  .feels-like::after {
+    font-size: 1.5rem;
+    margin-top: 0.2rem;
+  }
+  .weather-icon-container {
+    max-width: 28% !important;
+  }
 }
 
-input::placeholder {
-  color: rgba(255, 255, 255, 0.458);
+/* Footer  */
+
+footer p {
+  text-align: center;
+  font-size: 2rem;
 }
-input:focus {
-  outline: none;
+
+footer div {
+  display: flex;
+  justify-content: center;
+}
+
+.track-location-btn {
+  all: unset;
+
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  background-color: rgb(45, 170, 248);
+  transition: 0.5s;
+}
+
+.track-location-btn:hover {
+  scale: 1.2;
+  background-color: blue;
+  border-radius: 2rem;
 }
