@@ -1,4 +1,4 @@
-let weatherDisplay = document.querySelector(".main-temp");
+let mainTemp = document.querySelector(".main-temp");
 let tempFeelsLike = document.querySelector(".feels-like");
 let weatherIcon = document.querySelector(".weather-icon");
 let userInputLocation = document.querySelector(".user-input-location");
@@ -64,7 +64,7 @@ const getWeatherinfo = () => {
       currentWeatherIcon.classList.toggle("weather-icon-hidden");
       currentWeatherIcon = weatherIcon;
     }
-    weatherDisplay.textContent = response.current.temp_f;
+    mainTemp.textContent = response.current.temp_f;
     tempFeelsLike.textContent = "Feels " + response.current.feelslike_f;
   });
 };
