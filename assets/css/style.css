@@ -82,6 +82,34 @@ html .feels-like {
   -moz-text-fill-color: transparent;
 }
 
+.fa-spin {
+  animation-name: fa-spin-animation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fa-spin-animation {
+  0% {
+    color: aqua !important;
+  }
+  25% {
+    color: green !important;
+  }
+  50% {
+    color: blueviolet !important;
+  }
+  75% {
+    color: yellow !important;
+  }
+  100% {
+    color: rgb(0, 102, 255) !important;
+  }
+}
+
+.location-input-area {
+  margin-top: 50vh;
+}
+
 input::placeholder {
   color: rgba(255, 255, 255, 0.458);
 }

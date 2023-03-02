@@ -28,9 +28,9 @@
     <title>Weather App</title>
   </head>
   <body class="">
-    <section class="container py-2 text-center">
+    <section class="container weather-details py-2 text-center visually-hidden">
       <div class="row">
-        <h2 class="location text-center py-2 location-name">London</h2>
+        <h2 class="location-current text-center py-2 location-name">London</h2>
         <div class="d-flex justify-content-center gap-5 pt-5">
           <span class="fa fa-sun fs-2 text-warning my-auto weather-icon"></span>
           <div class="d-flex flex-column">
@@ -42,14 +42,16 @@
       </div>
     </section>
 
-    <section class="d-flex justify-content-center gap-5">
+    <section class="d-flex justify-content-center gap-5 location-input-area">
       <input
+        value=""
         class="user-location bg-transparent border-0 border-bottom border-info rounded-3 col-4 col-md-2 px-2 text-light fs-5"
         type="text"
         placeholder="Location?"
       />
       <button
         type="button"
+        onclick="getWeatherinfo()"
         class="get-locatiion-btn btn btn-outline-info col-4 col-md-2 link-light"
       >
         Track Weather
