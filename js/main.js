@@ -75,6 +75,7 @@ const getWeatherinfo = () => {
         "weather-icon"
       );
     }
+    userLocation.value = "";
     weatherDisplay.textContent = response.current.temp_f;
     feelsLike.textContent = "Feels Like " + response.current.feelslike_f;
   });
