@@ -71,3 +71,20 @@ html .feels-like {
 .fa-rain {
   color: #86ffff;
 }
+
+.fa-cloud-sun {
+  background-color: #f3ec78;
+  background-image: linear-gradient(350deg, #ffffff, #ffa837);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.458);
+}
+input:focus {
+  outline: none;
+}

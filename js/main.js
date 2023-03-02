@@ -20,27 +20,36 @@ let weatherData = getWeather().then((response) => {
 
   if (weatherCondition == "Overcast") {
     weatherIcon.removeAttribute("class");
-    weatherIcon.classList.add("fa");
-    weatherIcon.classList.add("fa-cloud");
-    weatherIcon.classList.add("my-auto");
-    weatherIcon.classList.add("fs-1");
-    weatherIcon.classList.add("weather-icon");
-  }
-  if (weatherCondition == "Sunny") {
+    weatherIcon.classList.add("fa", "fa-cloud", "my-auto", "weather-icon");
+    // weatherIcon.classList.add("fa-cloud");
+    // weatherIcon.classList.add("my-auto");
+    // weatherIcon.classList.add("fs-1");
+    // weatherIcon.classList.add("weather-icon");
+  } else if (weatherCondition == "Sunny") {
     weatherIcon.removeAttribute("class");
-    weatherIcon.classList.add("fa");
-    weatherIcon.classList.add("fa-sunny");
-    weatherIcon.classList.add("my-auto");
-    weatherIcon.classList.add("fs-1");
-    weatherIcon.classList.add("weather-icon");
-  }
-  if (weatherCondition == "Rainy") {
+    weatherIcon.classList.add("fa", "fa-sun", "my-auto", "weather-icon");
+  } else if (weatherCondition == "Rainy") {
     weatherIcon.removeAttribute("class");
-    weatherIcon.classList.add("fa");
-    weatherIcon.classList.add("fa-rain");
-    weatherIcon.classList.add("my-auto");
-    weatherIcon.classList.add("fs-1");
-    weatherIcon.classList.add("weather-icon");
+    weatherIcon.classList.add("fa", "fa-rain", "my-auto", "weather-icon");
+  } else if (weatherCondition == "Partly cloudy") {
+    weatherIcon.removeAttribute("class");
+    weatherIcon.classList.add(
+      "fa",
+      "fa-cloud-sun",
+      "my-auto",
+      "weather-icon",
+      "text-"
+    );
+  } else {
+    console.log("called!");
+    weatherIcon.removeAttribute("class");
+    weatherIcon.classList.add(
+      "fa",
+      "fa-sun",
+      "my-auto",
+      "weather-icon",
+      "text-warning"
+    );
   }
   weatherDisplay.textContent = response.current.temp_f;
   feelsLike.textContent = "Feels Like " + response.current.feelslike_f;
