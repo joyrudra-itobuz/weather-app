@@ -1,11 +1,11 @@
-let mainTemp = document.querySelector(".main-temp");
-let tempFeelsLike = document.querySelector(".feels-like");
+const mainTemp = document.querySelector(".main-temp");
+const tempFeelsLike = document.querySelector(".feels-like");
 let weatherIcon = document.querySelector(".weather-icon");
-let userInputLocation = document.querySelector(".user-input-location");
-let getLocationBtn = document.querySelector(".get-locatiion-btn");
-let weatherDetailsContainer = document.querySelector(".weather-details");
-let currentLocation = document.querySelector(".location-current");
-let inputContainer = document.querySelector(".location-input-area");
+const userInputLocation = document.querySelector(".user-input-location");
+const getLocationBtn = document.querySelector(".get-locatiion-btn");
+const weatherDetailsContainer = document.querySelector(".weather-details");
+const currentLocation = document.querySelector(".location-current");
+const inputContainer = document.querySelector(".location-input-area");
 let currentWeatherIcon = document.querySelector(".current-weather-icon");
 
 const getWeather = async () => {
