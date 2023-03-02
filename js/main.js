@@ -1,5 +1,5 @@
 let weatherDisplay = document.querySelector(".main-temp");
-let feelsLike = document.querySelector(".feels-like");
+let tempFeelsLike = document.querySelector(".feels-like");
 let weatherIcon = document.querySelector(".weather-icon");
 let userInputLocation = document.querySelector(".user-input-location");
 let getLocationBtn = document.querySelector(".get-locatiion-btn");
@@ -33,31 +33,26 @@ const getWeatherinfo = () => {
 
     if (weatherCondition == "Overcast") {
       weatherIcon = document.querySelector(".overcast-icon");
-      console.log(weatherIcon);
       weatherIcon.classList.toggle("weather-icon-hidden");
       currentWeatherIcon.classList.toggle("weather-icon-hidden");
       currentWeatherIcon = weatherIcon;
     } else if (weatherCondition == "Sunny") {
       weatherIcon = document.querySelector(".sunny-icon");
-      console.log(weatherIcon);
       weatherIcon.classList.toggle("weather-icon-hidden");
       currentWeatherIcon.classList.toggle("weather-icon-hidden");
       currentWeatherIcon = weatherIcon;
     } else if (weatherCondition == "Rainy") {
       weatherIcon = document.querySelector(".cloudy");
-      console.log(weatherIcon);
       weatherIcon.classList.toggle("weather-icon-hidden");
       currentWeatherIcon.classList.toggle("weather-icon-hidden");
       currentWeatherIcon = weatherIcon;
     } else if (weatherCondition == "Partly cloudy") {
       weatherIcon = document.querySelector(".cloudy-icon");
-      console.log(weatherIcon);
       weatherIcon.classList.toggle("weather-icon-hidden");
       currentWeatherIcon.classList.toggle("weather-icon-hidden");
       currentWeatherIcon = weatherIcon;
     } else if (weatherCondition == "Clear") {
       weatherIcon = document.querySelector(".clear-icon");
-      console.log(weatherIcon);
       weatherIcon.classList.toggle("weather-icon-hidden");
       currentWeatherIcon.classList.toggle("weather-icon-hidden");
       currentWeatherIcon = weatherIcon;
@@ -70,6 +65,12 @@ const getWeatherinfo = () => {
       currentWeatherIcon = weatherIcon;
     }
     weatherDisplay.textContent = response.current.temp_f;
-    feelsLike.textContent = "Feels " + response.current.feelslike_f;
+    tempFeelsLike.textContent = "Feels " + response.current.feelslike_f;
   });
 };
+
+userInputLocation.addEventListener("keyup", function (e) {
+  if (e.key === "Enter") {
+    getWeatherinfo();
+  }
+});

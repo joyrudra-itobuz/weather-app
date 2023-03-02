@@ -16,7 +16,7 @@ font-family: "Work Sans", sans-serif; */
 body {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  background-color: rgb(0, 102, 255);
+  background-color: #0251e5;
   color: white;
 }
 
@@ -29,10 +29,16 @@ nav {
   font-size: 2rem;
 }
 nav .default-text {
-  font-size: 3rem;
   all: unset;
   text-align: center;
   /* border-bottom: 1px solid rgb(130, 130, 130); */
+}
+
+nav input::after {
+  position: absolute;
+  font-size: 3rem;
+  content: "|";
+  color: rgb(255, 255, 255);
 }
 
 nav input:focus-visible {
@@ -81,6 +87,7 @@ nav input:focus-visible {
 }
 
 .temperature-container .feels-like {
+  color: rgb(0, 238, 255);
   margin-top: -5rem;
   font-size: 1.5rem;
 }
