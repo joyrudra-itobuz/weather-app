@@ -31,20 +31,16 @@ nav {
 nav .default-text {
   all: unset;
   text-align: center;
-  /* border-bottom: 1px solid rgb(130, 130, 130); */
 }
-
 nav input::after {
   position: absolute;
   font-size: 3rem;
   content: "|";
   color: rgb(255, 255, 255);
 }
-
 nav input:focus-visible {
   outline: none;
 }
-
 @media (min-width: 1600px) {
   .default-text {
     font-size: 4rem !important;
@@ -52,62 +48,51 @@ nav input:focus-visible {
 }
 
 /* Weather Display Container */
+
 .weather-icon-container {
   max-width: 40%;
 }
-
 .weather-icon {
   max-width: 80%;
 }
-
 .weather-icon-hidden {
   display: none;
 }
-
 .weather-details {
   display: flex;
   justify-content: center;
 }
-
 .temperature-container {
   margin-top: auto;
   margin-bottom: auto;
 }
-
-.temperature-container .main-temp {
+.main-temp {
   margin-top: 0rem;
   font-size: 5rem;
 }
-
 .main-temp::after {
   position: absolute;
   content: "o";
   font-size: 1rem;
   margin-top: 1rem;
 }
-
-.temperature-container .feels-like {
+.feels-like {
   color: rgb(0, 238, 255);
   margin-top: -5rem;
   font-size: 1.5rem;
 }
-
 .feels-like::after {
   position: absolute;
   content: "o";
   font-size: 0.7rem;
 }
-
 @media (min-width: 640px) {
   .main-temp {
     font-size: 5rem !important;
   }
-
   .feels-like {
-    /* margin-top: -12rem !important; */
     font-size: 2.4rem !important;
   }
-
   .weather-icon-container {
     max-width: 30% !important;
   }
@@ -121,7 +106,6 @@ nav input:focus-visible {
     font-size: 2rem;
     margin-top: 2rem;
   }
-
   .feels-like {
     margin-top: -12rem !important;
     font-size: 2rem !important;
@@ -130,7 +114,6 @@ nav input:focus-visible {
     font-size: 1rem;
     margin-top: 0.2rem;
   }
-
   .weather-icon-container {
     max-width: 30% !important;
   }
@@ -139,7 +122,6 @@ nav input:focus-visible {
   .main-temp {
     font-size: 12rem !important;
   }
-
   .main-temp::after {
     font-size: 3rem;
     margin-top: 3rem;
@@ -157,7 +139,6 @@ nav input:focus-visible {
   .main-temp {
     font-size: 15rem !important;
   }
-
   .main-temp::after {
     font-size: 3.2rem;
     margin-top: 3rem;
@@ -181,22 +162,18 @@ footer p {
   text-align: center;
   font-size: 2rem;
 }
-
 footer div {
   display: flex;
   justify-content: center;
 }
-
 .track-location-btn {
   all: unset;
-
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
   border-radius: 1rem;
   background-color: rgb(45, 170, 248);
   transition: 0.5s;
 }
-
 .track-location-btn:hover {
   scale: 1.2;
   background-color: blue;
