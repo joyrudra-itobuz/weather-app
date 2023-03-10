@@ -15,11 +15,26 @@
         <a href="#"
           ><img class="menu-icons" src="./assets/images/share-2.svg" alt=""
         /></a>
-        <input
-          value="San Francisco"
-          type="text"
-          class="default-text user-input-location"
-        />
+        <div class="input-dropdown">
+          <input
+            value="San Francisco"
+            type="text"
+            class="default-text user-input-location"
+          />
+          <ul class="dropdown-list dropdown-list-toggle">
+            <li onclick="getDropdownLocation('Kolkata')">Kolkata</li>
+            <li onclick="getDropdownLocation('Delhi')">Delhi</li>
+            <li onclick="getDropdownLocation('Agra')">Agra</li>
+            <li onclick="getDropdownLocation('Barasat')">Barasat</li>
+            <li onclick="getDropdownLocation('Krishnanagar')">Krishnanagar</li>
+            <li onclick="getDropdownLocation('Lucknow')">Locknow</li>
+            <li onclick="getDropdownLocation('Kashmir')">Kashmir</li>
+            <li onclick="getDropdownLocation('Congo')">Congo</li>
+            <li onclick="getDropdownLocation('SanFrancisco')">San Francisco</li>
+            <li onclick="getDropdownLocation('London')">London</li>
+          </ul>
+        </div>
+
         <a href="#"
           ><img class="menu-icons" src="./assets/images/menu.svg" alt=""
         /></a>

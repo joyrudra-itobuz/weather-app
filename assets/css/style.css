@@ -10,7 +10,7 @@ font-family: "Work Sans", sans-serif; */
   --color-heading: rgb(0, 130, 130);
   --color-heading-secondary: purple;
   --transiton-hover-duration: all 0.5s;
-  --box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.422);
+  --box-shadow: 0rem 0.5rem 1rem 0.2rem rgba(0, 0, 0, 0.298);
 }
 
 body {
@@ -45,6 +45,23 @@ nav input:focus-visible {
   .default-text {
     font-size: 4rem !important;
   }
+}
+
+.dropdown-list {
+  margin-top: -0.2rem;
+  font-size: 2rem;
+  padding: 0.5rem 0.5rem;
+  text-align: center;
+  background-color: rgb(0, 170, 255);
+  height: 15vh;
+  list-style: none;
+  overflow: scroll;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  box-shadow: var(--box-shadow);
+}
+.dropdown-list-toggle {
+  display: none;
 }
 
 /* Weather Display Container */
