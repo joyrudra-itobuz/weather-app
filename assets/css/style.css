@@ -50,14 +50,14 @@ nav input:focus-visible {
 .dropdown-list {
   margin-top: -0.2rem;
   font-size: 2rem;
-  padding: 0.5rem 0.5rem;
+  padding: 0.1rem 0.5rem;
   text-align: center;
   background-color: rgb(0, 170, 255);
   height: 15vh;
   list-style: none;
   overflow: scroll;
-  border-bottom-left-radius: 2rem;
-  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   box-shadow: var(--box-shadow);
 }
 .dropdown-list-toggle {

@@ -96,13 +96,18 @@ inputDropdown.addEventListener("blur", () => {
   dropdownList.classList.toggle("dropdown-list-toggle");
 });
 
-// const getDropdownLocation = (userLocation) => {
-//   console.log(userInputLocation);
-//   userInputLocation.value = userLocation;
-// };
-
-function getDropdownLocation(userLocation) {
-  console.log("Called!");
-  userInputLocation.value = userLocation;
-  getWeatherinfo();
+function dropdownListData() {
+  const items = document.querySelectorAll("#ulList li");
+  for (let i = 0; i < items.length; i++) {
+    items[i].onclick = function () {
+      console.log(this.textContent);
+      // console.log(this.innerHTML);
+      userInputLocation.value = this.innerHTML;
+    };
+  }
 }
+
+userInputLocation.onclick = function () {
+  dropdownListData();
+  getWeatherinfo();
+};
