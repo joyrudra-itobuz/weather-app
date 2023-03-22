@@ -19,7 +19,6 @@ const getWeather = async () => {
     "&aqi=no";
   console.log(location);
 
-  // "http://api.weatherapi.com/v1/current.json?key=0c80b2b56f1943ada19100744230103&q=Kolkata&aqi=no";
   const response = await fetch(location).then(
     (response) => {
       return response.json();
@@ -42,27 +41,27 @@ const getWeatherinfo = () => {
       let weatherCondition = response.current.condition.text;
       console.log(weatherCondition);
 
-      if (weatherCondition == "Overcast") {
+      if (weatherCondition === "Overcast") {
         weatherIcon = document.querySelector(".overcast-icon");
         weatherIcon.classList.toggle("weather-icon-hidden");
         currentWeatherIcon.classList.toggle("weather-icon-hidden");
         currentWeatherIcon = weatherIcon;
-      } else if (weatherCondition == "Sunny") {
+      } else if (weatherCondition === "Sunny") {
         weatherIcon = document.querySelector(".sunny-icon");
         weatherIcon.classList.toggle("weather-icon-hidden");
         currentWeatherIcon.classList.toggle("weather-icon-hidden");
         currentWeatherIcon = weatherIcon;
-      } else if (weatherCondition == "Rainy") {
+      } else if (weatherCondition === "Rainy") {
         weatherIcon = document.querySelector(".cloudy");
         weatherIcon.classList.toggle("weather-icon-hidden");
         currentWeatherIcon.classList.toggle("weather-icon-hidden");
         currentWeatherIcon = weatherIcon;
-      } else if (weatherCondition == "Partly cloudy") {
+      } else if (weatherCondition === "Partly cloudy") {
         weatherIcon = document.querySelector(".cloudy-icon");
         weatherIcon.classList.toggle("weather-icon-hidden");
         currentWeatherIcon.classList.toggle("weather-icon-hidden");
         currentWeatherIcon = weatherIcon;
-      } else if (weatherCondition == "Clear") {
+      } else if (weatherCondition === "Clear") {
         weatherIcon = document.querySelector(".clear-icon");
         weatherIcon.classList.toggle("weather-icon-hidden");
         currentWeatherIcon.classList.toggle("weather-icon-hidden");
@@ -101,7 +100,6 @@ function dropdownListData() {
   for (let i = 0; i < items.length; i++) {
     items[i].onclick = function () {
       console.log(this.textContent);
-      // console.log(this.innerHTML);
       userInputLocation.value = this.innerHTML;
     };
   }
