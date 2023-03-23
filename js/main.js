@@ -1,3 +1,5 @@
+//Selectors
+
 const mainTemp = document.querySelector(".main-temp");
 const tempFeelsLike = document.querySelector(".feels-like");
 let weatherIcon = document.querySelector(".weather-icon");
