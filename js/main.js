@@ -10,8 +10,6 @@ let currentWeatherIcon = document.querySelector(".current-weather-icon");
 const dropdownList = document.querySelector(".dropdown-list");
 const inputDropdown = document.querySelector(".input-dropdown");
 
-console.log(inputDropdown);
-
 const getWeather = async () => {
   let location = "http://127.0.0.1:8080/";
 
@@ -63,9 +61,8 @@ const getWeatherinfo = () => {
         currentWeatherIcon.classList.toggle("weather-icon-hidden");
         currentWeatherIcon = weatherIcon;
       } else {
-        console.log("called!");
         weatherIcon = document.querySelector(".clear-icon");
-        console.log(weatherIcon);
+
         weatherIcon.classList.toggle("weather-icon-hidden");
         currentWeatherIcon.classList.toggle("weather-icon-hidden");
         currentWeatherIcon = weatherIcon;
@@ -113,7 +110,6 @@ function dropdownListData() {
   const items = document.querySelectorAll("#ulList li");
   for (let i = 0; i < items.length; i++) {
     items[i].onclick = function () {
-      console.log(this.textContent);
       userInputLocation.value = this.innerHTML;
     };
   }
