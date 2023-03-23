@@ -41,35 +41,21 @@ const getWeatherinfo = () => {
 
       if (weatherCondition === "Overcast") {
         weatherIcon = document.querySelector(".overcast-icon");
-        weatherIcon.classList.toggle("weather-icon-hidden");
-        currentWeatherIcon.classList.toggle("weather-icon-hidden");
-        currentWeatherIcon = weatherIcon;
+        changWeatherIcon(weatherIcon);
       } else if (weatherCondition === "Sunny") {
         weatherIcon = document.querySelector(".sunny-icon");
-        weatherIcon.classList.toggle("weather-icon-hidden");
-        currentWeatherIcon.classList.toggle("weather-icon-hidden");
-        currentWeatherIcon = weatherIcon;
+        changWeatherIcon(weatherIcon);
       } else if (weatherCondition === "Rainy") {
         weatherIcon = document.querySelector(".cloudy-icon");
-        weatherIcon.classList.toggle("weather-icon-hidden");
-        currentWeatherIcon.classList.toggle("weather-icon-hidden");
-        currentWeatherIcon = weatherIcon;
+        changWeatherIcon(weatherIcon);
       } else if (weatherCondition === "Partly cloudy") {
         weatherIcon = document.querySelector(".cloudy-icon");
-        weatherIcon.classList.toggle("weather-icon-hidden");
-        currentWeatherIcon.classList.toggle("weather-icon-hidden");
-        currentWeatherIcon = weatherIcon;
+        changWeatherIcon(weatherIcon);
       } else if (weatherCondition === "Clear") {
         weatherIcon = document.querySelector(".clear-icon");
-        weatherIcon.classList.toggle("weather-icon-hidden");
-        currentWeatherIcon.classList.toggle("weather-icon-hidden");
-        currentWeatherIcon = weatherIcon;
+        changWeatherIcon(weatherIcon);
       } else {
         weatherIcon = document.querySelector(".clear-icon");
-
-        weatherIcon.classList.toggle("weather-icon-hidden");
-        currentWeatherIcon.classList.toggle("weather-icon-hidden");
-        currentWeatherIcon = weatherIcon;
       }
       mainTemp.textContent = response.tempC;
       tempFeelsLike.textContent = "Feels " + response.feelslikeC;
@@ -77,6 +63,12 @@ const getWeatherinfo = () => {
     .catch((err) => {
       console.log(err);
     });
+};
+
+const changWeatherIcon = (weatherIcon) => {
+  weatherIcon.classList.toggle("weather-icon-hidden");
+  currentWeatherIcon.classList.toggle("weather-icon-hidden");
+  currentWeatherIcon = weatherIcon;
 };
 
 //IIFE Function
