@@ -10,6 +10,8 @@ let currentWeatherIcon = document.querySelector(".current-weather-icon");
 const dropdownList = document.querySelector(".dropdown-list");
 const inputDropdown = document.querySelector(".input-dropdown");
 
+//Promise
+
 const getWeather = async () => {
   let location = "http://127.0.0.1:8080/";
 
@@ -29,6 +31,8 @@ const getWeather = async () => {
   return response;
 };
 
+//Get Weather Function
+
 const getWeatherinfo = () => {
   userInputLocation.value = userInputLocation.value;
   getWeather()
@@ -46,7 +50,7 @@ const getWeatherinfo = () => {
         currentWeatherIcon.classList.toggle("weather-icon-hidden");
         currentWeatherIcon = weatherIcon;
       } else if (weatherCondition === "Rainy") {
-        weatherIcon = document.querySelector(".cloudy");
+        weatherIcon = document.querySelector(".cloudy-icon");
         weatherIcon.classList.toggle("weather-icon-hidden");
         currentWeatherIcon.classList.toggle("weather-icon-hidden");
         currentWeatherIcon = weatherIcon;
@@ -75,6 +79,8 @@ const getWeatherinfo = () => {
     });
 };
 
+//IIFE Function
+
 (async () => {
   let location = "http://127.0.0.1:8080/";
 
@@ -92,6 +98,8 @@ const getWeatherinfo = () => {
     dropdownList.appendChild(newLi);
   }
 })();
+
+//Event Listeneners
 
 userInputLocation.addEventListener("keyup", function (e) {
   if (e.key === "Enter") {
