@@ -13,22 +13,21 @@ const inputDropdown = document.querySelector(".input-dropdown");
 console.log(inputDropdown);
 
 const getWeather = async () => {
-  let location =
-    "http://api.weatherapi.com/v1/current.json?key=0c80b2b56f1943ada19100744230103&q=" +
-    userInputLocation.value +
-    "&aqi=no";
-  console.log(location);
+  let location = "http://127.0.0.1:8080/";
 
-  const response = await fetch(location).then(
-    (response) => {
+  const userLocation = userInputLocation.value;
+
+  const response = await fetch(location)
+    .then((response) => {
       return response.json();
-    },
-    (err) => {
-      console.log(err);
-      return "Check Your Spelling or Server is busy!";
-    }
-  );
-  console.log(response);
+    })
+    .then((data) => {
+      const inputLocation = data.find(
+        (findLocation) => findLocation.location === userLocation
+      );
+      return inputLocation;
+    });
+
   return response;
 };
 
@@ -36,10 +35,7 @@ const getWeatherinfo = () => {
   userInputLocation.value = userInputLocation.value;
   getWeather()
     .then((response) => {
-      console.log(response);
-
-      let weatherCondition = response.current.condition.text;
-      console.log(weatherCondition);
+      let weatherCondition = response.condition.text;
 
       if (weatherCondition === "Overcast") {
         weatherIcon = document.querySelector(".overcast-icon");
@@ -74,13 +70,31 @@ const getWeatherinfo = () => {
         currentWeatherIcon.classList.toggle("weather-icon-hidden");
         currentWeatherIcon = weatherIcon;
       }
-      mainTemp.textContent = response.current.temp_f;
-      tempFeelsLike.textContent = "Feels " + response.current.feelslike_f;
+      mainTemp.textContent = response.tempC;
+      tempFeelsLike.textContent = "Feels " + response.feelslikeC;
     })
     .catch((err) => {
-      userInputLocation.value = err;
+      console.log(err);
     });
 };
+
+(async () => {
+  let location = "http://127.0.0.1:8080/";
+
+  const response = await fetch(location)
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      return data;
+    });
+
+  for (let i = 1; i < response.length; i++) {
+    const newLi = document.createElement("li");
+    newLi.innerHTML = response[i].location;
+    dropdownList.appendChild(newLi);
+  }
+})();
 
 userInputLocation.addEventListener("keyup", function (e) {
   if (e.key === "Enter") {
